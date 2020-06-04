@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.jorge.mycv.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home">
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/nav_titulos"
+        android:name="com.jorge.mycv.ui.Titulos.TitulosFragment2"
+        android:label="@string/menu_degrees"
+        tools:layout="@layout/fragment_titulos2" />
+
+    <fragment
+        android:id="@+id/nav_cursos"
+        android:name="com.jorge.mycv.ui.cursos.CursosFragment"
+        android:label="@string/menu_courses"
+        tools:layout="@layout/fragment_cursos" />
+    <fragment
+        android:id="@+id/nav_laboral"
+        android:name="com.jorge.mycv.ui.employment.LaboralFragment2"
+        android:label="@string/menu_employment"
+        tools:layout="@layout/fragment_laboral2_list" />
+    <fragment
+        android:id="@+id/nav_linkedin"
+        android:name="com.jorge.mycv.ui.VidaDigital.LinkedinFragment"
+        android:label="Linkedin"
+        tools:layout="@layout/fragment_linkedin" />
+    <fragment
+        android:id="@+id/nav_github"
+        android:name="com.jorge.mycv.ui.VidaDigital.GithubFragment"
+        android:label="Github"
+        tools:layout="@layout/fragment_github" />
+    <fragment
+        android:id="@+id/nav_blog"
+        android:name="com.jorge.mycv.ui.VidaDigital.BlogFragment"
+        android:label="MyBlog"
+        tools:layout="@layout/fragment_blog" />
+</navigation>

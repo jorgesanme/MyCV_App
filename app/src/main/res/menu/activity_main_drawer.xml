@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_person"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_titulos"
+            android:icon="@drawable/ic_university"
+            android:title="@string/menu_degrees" />
+        <item
+            android:id="@+id/nav_cursos"
+            android:icon="@drawable/ic_online_course"
+            android:title="@string/menu_courses" />
+        <item
+            android:id="@+id/nav_laboral"
+            android:icon="@drawable/ic_businessman"
+            android:title="@string/menu_employment" />
+    </group>
+
+    <group>
+        <item
+            android:id="@+id/nav_linkedin"
+            android:icon="@drawable/ic_linkedin"
+            android:title="Linkedin"/>
+        <item
+            android:id="@+id/nav_github"
+            android:icon="@drawable/ic_icon_github"
+            android:title="Github"/>
+
+        <item
+            android:id="@+id/nav_blog"
+            android:icon="@drawable/ic_icon_blogger"
+            android:title="Mi Blog"/>
+
+    </group>
+
+</menu>

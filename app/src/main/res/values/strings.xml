@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">My CV</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio Development</string>
+    <string name="nav_header_subtitle">Jorgesanme@gmail.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_degrees">Degrees</string>
+    <string name="menu_courses">Courses</string>
+    <string name="menu_employment">Employment</string>
+
+    <string name="menu_digital_life">Digital life</string>
+    <string name="home_second">Home Second</string>
+    <string name="boton_cancelar">Cancel</string>
+    <string name="boton_aceptar">Accept</string>
+
+    <string name="nueva_trabajo">New Employment</string>
+    <string name="nueva_Curso">New Course</string>
+    <string name="nueva_titulo">New Degrees</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tocho_home">"Me dirijo a ustedes en respuesta a su anuncio publicado en www.infojobs.net solicitando un Administrativo de compras."
+        "Por ello adjunto mi CV. donde podrán valorar  la idoneidad de  mi perfil, del que, por ejemplo, cabría destacar"
+"1.-Formación Profesional en la Rama Administrativa, Hostelera y Alojamiento."
+
+"2.-Dilatada experiencia en la Hostelería (16 años), ocupando puesto de relevancia en una gran cadena."
+
+"3.-Dominio de idiomas extranjeros, destacando sobre todos el Inglés y el Alemán."
+
+"4.- Conocimientos de contabilidad"
+
+"Seria para mi un placer ampliarles la información que deseen en una próxima entrevista, de ser esta concertada, y de presentarles los certificados de titulación si así lo requieren."
+
+"Es espera de sus noticias, les saludo." </string>
+</resources>
