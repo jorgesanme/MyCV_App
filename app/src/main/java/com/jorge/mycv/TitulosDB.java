@@ -7,6 +7,11 @@ import io.realm.annotations.PrimaryKey;
 
 public class TitulosDB extends RealmObject {
     public static final String TITULOSDB_ID = "id";
+    public static final String TITULOSDB_CENTRO= "centro";
+    public static final String TITULOSDB_TITULO = "titulo";
+    public static final String TITULOSDB_RAMA = "rama";
+    public static final String TITULOSDB_NOTA = "nota";
+    public static final String TITULOSDB_DESCRIPCION = "descripcion";
 
     @PrimaryKey
     private long id;

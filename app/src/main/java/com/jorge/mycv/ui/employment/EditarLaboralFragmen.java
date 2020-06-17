@@ -22,6 +22,7 @@ import com.jorge.mycv.R;
 public class EditarLaboralFragmen extends DialogFragment {
 
     private long idLaboral;
+    private String cargo,empresa,direccion,periodo,descripcion;
 
     onNuevoLaboralGuardarListener mlistener;
     Context contexto;
@@ -36,10 +37,16 @@ public class EditarLaboralFragmen extends DialogFragment {
     }
 
 
-    public static EditarLaboralFragmen newInstance(long idLaboral ) {
+    public static EditarLaboralFragmen newInstance(long idLaboral,String cargo,String empresa,
+                                                   String direccion, String periodo, String descripcion) {
         EditarLaboralFragmen fragment = new EditarLaboralFragmen();
         Bundle args = new Bundle();
         args.putLong(LaboralDB.LABORALDB_ID, idLaboral);
+        args.putString(LaboralDB.LABORALDB_CARGO,cargo);
+        args.putString(LaboralDB.LABORALDB_EMPRESA, empresa);
+        args.putString(LaboralDB.LABORALDB_DIRECCION,direccion);
+        args.putString(LaboralDB.LABORALDB_PERIODO,periodo);
+        args.putString(LaboralDB.LABORALDB_DESCRIPCION,descripcion);
         fragment.setArguments(args);
         return fragment;
     }
@@ -49,7 +56,11 @@ public class EditarLaboralFragmen extends DialogFragment {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             idLaboral = getArguments().getLong(LaboralDB.LABORALDB_ID);
-
+            cargo = getArguments().getString(LaboralDB.LABORALDB_CARGO);
+            empresa = getArguments().getString(LaboralDB.LABORALDB_EMPRESA);
+            direccion = getArguments().getString(LaboralDB.LABORALDB_DIRECCION);
+            periodo = getArguments().getString(LaboralDB.LABORALDB_PERIODO);
+            descripcion = getArguments().getString(LaboralDB.LABORALDB_DESCRIPCION);
         }
     }
 
@@ -66,17 +77,25 @@ public class EditarLaboralFragmen extends DialogFragment {
         editTextdireccion = v.findViewById(R.id.new_laboral_direccion);
         editTextperido = v.findViewById(R.id.new_laboral_periodo);
         editTextDescripcion = v.findViewById(R.id.new_laboral_descripcion);
+
+        //se precarga el contenido
+        editTextCargo.setText(cargo);
+        editTextEmpresa.setText(empresa);
+        editTextdireccion.setText(direccion);
+        editTextperido.setText(periodo);
+        editTextDescripcion.setText(descripcion);
+
         builder.setView(v);
 
-        builder.setTitle(R.string.nueva_trabajo)
+        builder.setTitle(R.string.editar_trabajo)
                 .setPositiveButton(R.string.boton_aceptar, new DialogInterface.OnClickListener() {
-                    String cargo = editTextCargo.toString();
-                    String empresa = editTextEmpresa.toString();
-                    String direccion = editTextdireccion.toString();
-                    String periodo = editTextperido.toString();
-                    String descripcion = editTextDescripcion.toString();
 
                     public void onClick(DialogInterface dialog, int id) {
+                        String cargo = editTextCargo.getText().toString();
+                        String empresa = editTextEmpresa.getText().toString();
+                        String direccion = editTextdireccion.getText().toString();
+                        String periodo = editTextperido.getText().toString();
+                        String descripcion = editTextDescripcion.getText().toString();
                         if(!cargo.isEmpty() && !empresa.isEmpty() && !direccion.isEmpty()
                                 && !periodo.isEmpty() && !descripcion.isEmpty()) {
                             mlistener.onLaboralUpdateClickListener(idLaboral,cargo, empresa, direccion, periodo, descripcion);

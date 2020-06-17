@@ -1,28 +1,63 @@
 package com.jorge.mycv.ui.Titulos;
 
+import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.jorge.mycv.LaboralDB;
 import com.jorge.mycv.R;
 import com.jorge.mycv.TitulosDB;
 
 
 import java.util.List;
 
+import io.realm.OrderedRealmCollection;
+import io.realm.RealmChangeListener;
+import io.realm.RealmList;
+import io.realm.RealmResults;
+
 
 public class MyTitulosRecyclerViewAdapter extends RecyclerView.Adapter<MyTitulosRecyclerViewAdapter.ViewHolder> {
 
     private final List<TitulosDB> mValues;
     private final onTitulosInteracionListener mListener;
+    private RealmChangeListener listenerRefresco;
+    private Context ctx;
 
-    public MyTitulosRecyclerViewAdapter(List<TitulosDB> items, onTitulosInteracionListener listener) {
+    public MyTitulosRecyclerViewAdapter(Context context, List<TitulosDB> items, onTitulosInteracionListener listener) {
         mValues = items;
         mListener = listener;
+        ctx = context;
+        this.listenerRefresco = new RealmChangeListener<OrderedRealmCollection<TitulosDB>>() {
+            @Override
+            public void onChange(OrderedRealmCollection<TitulosDB> results) {
+                notifyDataSetChanged();
+            }
+        };
+
+        if (items != null) {
+            addListener((OrderedRealmCollection<TitulosDB>) items);
+        }
+    }
+
+    private void addListener(OrderedRealmCollection<TitulosDB> items) {
+        if (items instanceof RealmResults) {
+            RealmResults realmResults = (RealmResults) items;
+            realmResults.addChangeListener(listenerRefresco);
+        } else if (items instanceof RealmList) {
+            RealmList<TitulosDB> list = (RealmList<TitulosDB>) items;
+            //noinspection unchecke
+            list.addChangeListener((RealmChangeListener) listenerRefresco);
+        } else {
+            throw new IllegalArgumentException("RealmCollection not supported: " + items.getClass());
+        }
+
     }
 
     @Override
@@ -56,6 +91,13 @@ public class MyTitulosRecyclerViewAdapter extends RecyclerView.Adapter<MyTitulos
                 mListener.onTituloEditClick(holder.mItem);
             }
         });
+
+        holder.eliminarTitulo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mListener.onTituloBorrarClick(holder.mItem);
+            }
+        });
     }
 
     @Override
@@ -70,6 +112,7 @@ public class MyTitulosRecyclerViewAdapter extends RecyclerView.Adapter<MyTitulos
         public final TextView rama;
         public final TextView nota;
         public final ImageView editTitulo;
+        public final ImageView eliminarTitulo;
         public TitulosDB mItem;
 
         public ViewHolder(View view) {
@@ -80,6 +123,7 @@ public class MyTitulosRecyclerViewAdapter extends RecyclerView.Adapter<MyTitulos
             rama = (TextView) view.findViewById(R.id.titulos_rama);
             nota = (TextView) view.findViewById(R.id.titulos_nota);
             editTitulo = (ImageView) view.findViewById(R.id.editar_titulo);
+            eliminarTitulo = (ImageView) view.findViewById(R.id.borrar_titulo);
         }
 
         @Override

@@ -42,13 +42,13 @@ public class NuevoLaboralDialogo extends DialogFragment {
 
         builder.setTitle(R.string.nueva_trabajo)
                 .setPositiveButton(R.string.boton_aceptar, new DialogInterface.OnClickListener() {
-                    String cargo = editTextCargo.toString();
-                    String empresa = editTextEmpresa.toString();
-                    String direccion = editTextdireccion.toString();
-                    String periodo = editTextperido.toString();
-                    String descripcion = editTextDescripcion.toString();
 
                     public void onClick(DialogInterface dialog, int id) {
+                        String cargo = editTextCargo.getText().toString();
+                        String empresa = editTextEmpresa.getText().toString();
+                        String direccion = editTextdireccion.getText().toString();
+                        String periodo = editTextperido.getText().toString();
+                        String descripcion = editTextDescripcion.getText().toString();
                         if(!cargo.isEmpty() && !empresa.isEmpty() && !direccion.isEmpty()
                             && !periodo.isEmpty() && !descripcion.isEmpty()) {
                             mlistener.onLaboralGuardarClickListener(cargo, empresa, direccion, periodo, descripcion);

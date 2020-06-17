@@ -7,6 +7,11 @@ import io.realm.annotations.PrimaryKey;
 
 public class LaboralDB extends RealmObject {
     public static final String LABORALDB_ID = "id";
+    public static final String LABORALDB_CARGO = "cargo";
+    public static final String LABORALDB_EMPRESA = "empresa";
+    public static final String LABORALDB_DIRECCION = "direccion";
+    public static final String LABORALDB_PERIODO = "periodo";
+    public static final String LABORALDB_DESCRIPCION = "descripcion";
 
     @PrimaryKey
     private long id;

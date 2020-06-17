@@ -64,7 +64,7 @@
         android:layout_marginBottom="16dp"
         android:ems="10"
         android:hint="Descripcion del puesto"
-        android:inputType="textPersonName"
+        android:inputType="textLongMessage|textMultiLine|textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/new_laboral_periodo"
         app:layout_constraintStart_toStartOf="@+id/new_laboral_periodo"

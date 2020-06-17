@@ -4,6 +4,7 @@ import com.jorge.mycv.LaboralDB;
 
 public interface onLaboralInteracionListener {
 
-    public  void onLaboralClick(LaboralDB laboralDB);
-    public void onLaboralEditClick(LaboralDB cursosDB);
+    void onLaboralClick(LaboralDB laboralDB);
+    void onLaboralEditClick(LaboralDB laboralDB);
+    void onLaboralBorrarClick(LaboralDB laboralDB);
 }

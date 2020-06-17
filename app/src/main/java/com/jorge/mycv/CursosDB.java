@@ -10,6 +10,7 @@ public class CursosDB extends RealmObject {
     public static final String CURSODB_TITULO = "titulo";
     public static final String CURSODB_QUIENIMPARTE = "empresa";
     public static final String CURSODB_HORAS= "horas";
+    public static final String CURSODB_DESCRIPCION= "descripcion";
 
     @PrimaryKey
     private long id;

@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.jorge.mycv.MainActivity;
 import com.jorge.mycv.R;
 
 public class HomeFragment extends Fragment {
@@ -30,6 +31,8 @@ public class HomeFragment extends Fragment {
                 textView.setText(s);
             }
         });
+        MainActivity mainActivity = (MainActivity) getActivity();
+        mainActivity.hideFloatingActionButton();
         return root;
     }
 }

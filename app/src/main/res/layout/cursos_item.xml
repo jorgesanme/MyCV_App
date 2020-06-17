@@ -91,19 +91,20 @@
 
         <ImageView
             android:id="@+id/Editar_curso"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
             android:layout_marginTop="4dp"
             android:layout_marginEnd="4dp"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/borrar_curso"
+            app:layout_constraintStart_toStartOf="@+id/borrar_curso"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_edit_black"
             tools:ignore="VectorDrawableCompat" />
 
         <ImageView
             android:id="@+id/borrar_curso"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="28sp"
+            android:layout_height="28sp"
             android:layout_marginEnd="4dp"
             android:layout_marginBottom="4dp"
             app:layout_constraintBottom_toBottomOf="parent"

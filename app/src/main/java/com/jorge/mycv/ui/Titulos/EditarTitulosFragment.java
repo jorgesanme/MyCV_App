@@ -17,9 +17,10 @@ import com.jorge.mycv.R;
 import com.jorge.mycv.TitulosDB;
 
 
-public class EditarTirulosFragment extends DialogFragment {
+public class EditarTitulosFragment extends DialogFragment {
 
     private long idTitulo;
+    private String centro,titulo,rama,nota,descripcion;
     onNuevoTituloGuardarListener mlistener;
     Context contexto;
     View v;
@@ -30,14 +31,20 @@ public class EditarTirulosFragment extends DialogFragment {
     EditText editTextDescripcion;
 
 
-    public EditarTirulosFragment() {
+    public EditarTitulosFragment() {
     }
 
 
-    public static EditarTirulosFragment newInstance(long idTitulo) {
-        EditarTirulosFragment fragment = new EditarTirulosFragment();
+    public static EditarTitulosFragment newInstance(long idTitulo, String centro, String titulo,
+                                                    String rama, String nota, String descripcion) {
+        EditarTitulosFragment fragment = new EditarTitulosFragment();
         Bundle args = new Bundle();
         args.putLong(TitulosDB.TITULOSDB_ID, idTitulo);
+        args.putString(TitulosDB.TITULOSDB_CENTRO,centro);
+        args.putString(TitulosDB.TITULOSDB_TITULO,titulo);
+        args.putString(TitulosDB.TITULOSDB_RAMA, rama);
+        args.putString(TitulosDB.TITULOSDB_NOTA,nota);
+        args.putString(TitulosDB.TITULOSDB_DESCRIPCION,descripcion);
         fragment.setArguments(args);
         return fragment;
     }
@@ -47,6 +54,11 @@ public class EditarTirulosFragment extends DialogFragment {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             idTitulo = getArguments().getLong(TitulosDB.TITULOSDB_ID);
+            centro = getArguments().getString(TitulosDB.TITULOSDB_CENTRO);
+            titulo = getArguments().getString(TitulosDB.TITULOSDB_TITULO);
+            rama = getArguments().getString(TitulosDB.TITULOSDB_RAMA);
+            nota = getArguments().getString(TitulosDB.TITULOSDB_NOTA);
+            descripcion = getArguments().getString(TitulosDB.TITULOSDB_DESCRIPCION);
         }
     }
 
@@ -64,17 +76,25 @@ public class EditarTirulosFragment extends DialogFragment {
         editTextRama = v.findViewById(R.id.nuevo_titulo_rama);
         editTextNota = v.findViewById(R.id.nuevo_titulo_nota);
         editTextDescripcion = v.findViewById(R.id.nuevo_titulo_descripcion);
+
+        //se precarga el contenido
+        editTextCentro.setText(centro);
+        editTextNombre.setText(titulo);
+        editTextRama.setText(rama);
+        editTextNota.setText(nota);
+        editTextDescripcion.setText(descripcion);
+
         builder.setView(v);
 
-        builder.setMessage(R.string.nueva_titulo)
+        builder.setTitle(R.string.editar_titulo)
                 .setPositiveButton(R.string.boton_aceptar, new DialogInterface.OnClickListener() {
-                    String centro = editTextCentro.toString();
-                    String nombre = editTextNombre.toString();
-                    String rama = editTextRama.toString();
-                    String nota = editTextNota.toString();
-                    String descripcion = editTextDescripcion.toString();
 
                     public void onClick(DialogInterface dialog, int id) {
+                        String centro = editTextCentro.getText().toString();
+                        String nombre = editTextNombre.getText().toString();
+                        String rama = editTextRama.getText().toString();
+                        String nota = editTextNota.getText().toString();
+                        String descripcion = editTextDescripcion.getText().toString();
                         //
                         if (!centro.isEmpty() && !nombre.isEmpty() && !rama.isEmpty()
                                 && !nota.isEmpty() && !descripcion.isEmpty()){

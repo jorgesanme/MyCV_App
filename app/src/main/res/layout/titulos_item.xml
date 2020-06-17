@@ -93,23 +93,25 @@
 
         <ImageView
             android:id="@+id/editar_titulo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="28sp"
+            android:layout_height="28sp"
             android:layout_marginTop="4dp"
             android:layout_marginEnd="4dp"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/borrar_titulo"
+            app:layout_constraintStart_toStartOf="@+id/borrar_titulo"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_edit_black"
             tools:ignore="VectorDrawableCompat" />
 
         <ImageView
             android:id="@+id/borrar_titulo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="28sp"
+            android:layout_height="28sp"
             android:layout_marginEnd="4dp"
             android:layout_marginBottom="4dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:srcCompat="@drawable/ic_bin" />
+            app:srcCompat="@drawable/ic_bin"
+            tools:ignore="VectorDrawableCompat" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

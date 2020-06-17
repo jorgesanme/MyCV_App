@@ -44,13 +44,13 @@ public class NuevoTituloDialogo extends DialogFragment {
 
         builder.setMessage(R.string.nueva_titulo)
                 .setPositiveButton(R.string.boton_aceptar, new DialogInterface.OnClickListener() {
-                    String centro = editTextCentro.toString();
-                    String nombre = editTextNombre.toString();
-                    String rama = editTextRama.toString();
-                    String nota = editTextNota.toString();
-                    String descripcion = editTextDescripcion.toString();
 
                     public void onClick(DialogInterface dialog, int id) {
+                        String centro = editTextCentro.getText().toString();
+                        String nombre = editTextNombre.getText().toString();
+                        String rama = editTextRama.getText().toString();
+                        String nota = editTextNota.getText().toString();
+                        String descripcion = editTextDescripcion.getText().toString();
                         //
                         if (!centro.isEmpty() && !nombre.isEmpty() && !rama.isEmpty()
                                 && !nota.isEmpty() && !descripcion.isEmpty()){

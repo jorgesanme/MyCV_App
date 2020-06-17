@@ -15,17 +15,46 @@ import com.jorge.mycv.R;
 
 import java.util.List;
 
+import io.realm.OrderedRealmCollection;
+import io.realm.RealmChangeListener;
+import io.realm.RealmList;
+import io.realm.RealmResults;
+
 
 public class MyLaboralRecyclerViewAdapter extends RecyclerView.Adapter<MyLaboralRecyclerViewAdapter.ViewHolder> {
 
     private final List<LaboralDB> mValues;
     private final onLaboralInteracionListener mListener;
+    private RealmChangeListener listenerRefresco;
     private Context contexto;
 
     public MyLaboralRecyclerViewAdapter(Context context, List<LaboralDB> items, onLaboralInteracionListener listener) {
         mValues = items;
         mListener = listener;
         contexto=context;
+        this.listenerRefresco = new RealmChangeListener<OrderedRealmCollection<LaboralDB>>() {
+            @Override
+            public void onChange(OrderedRealmCollection<LaboralDB> results) {
+                notifyDataSetChanged();
+            }
+        };
+
+        if (items != null) {
+            addListener((OrderedRealmCollection<LaboralDB>) items);
+        }
+    }
+
+    private void addListener(OrderedRealmCollection<LaboralDB> items) {
+        if (items instanceof RealmResults) {
+            RealmResults realmResults = (RealmResults) items;
+            realmResults.addChangeListener(listenerRefresco);
+        } else if (items instanceof RealmList) {
+            RealmList<LaboralDB> list = (RealmList<LaboralDB>) items;
+            //noinspection unchecke
+            list.addChangeListener((RealmChangeListener) listenerRefresco);
+        } else {
+            throw new IllegalArgumentException("RealmCollection not supported: " + items.getClass());
+        }
 
     }
 
@@ -40,18 +69,16 @@ public class MyLaboralRecyclerViewAdapter extends RecyclerView.Adapter<MyLaboral
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
 
-        holder.cargo.setText(holder.mItem.getCargo());
-        holder.empresa.setText(holder.mItem.getEmpresa());
-        holder.direccion.setText(holder.mItem.getDirecion());
-        holder.periodo.setText(holder.mItem.getPeriodo());
+        holder.cargo.setText(mValues.get(position).getCargo());
+        holder.empresa.setText(mValues.get(position).getEmpresa());
+        holder.direccion.setText(mValues.get(position).getDirecion());
+        holder.periodo.setText(mValues.get(position).getPeriodo());
 
 
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (null != mListener) {
-                    // Notify the active callbacks interface (the activity, if the
-                    // fragment is attached to one) that an item has been selected.
                     mListener.onLaboralClick(holder.mItem);
                 }
             }
@@ -60,6 +87,13 @@ public class MyLaboralRecyclerViewAdapter extends RecyclerView.Adapter<MyLaboral
             @Override
             public void onClick(View v) {
                 mListener.onLaboralEditClick(holder.mItem);
+            }
+        });
+
+        holder.eliminarLaboral.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mListener.onLaboralBorrarClick(holder.mItem);
             }
         });
     }
@@ -77,17 +111,19 @@ public class MyLaboralRecyclerViewAdapter extends RecyclerView.Adapter<MyLaboral
         public final TextView periodo;
         public final ImageView photo;
         public final ImageView editLaboral;
+        public final ImageView eliminarLaboral;
         public LaboralDB mItem;
 
         public ViewHolder(View view) {
             super(view);
             mView = view;
-            cargo = view.findViewById(R.id.titulos_centro);
-            empresa =  view.findViewById(R.id.titulos_nombre_Titulacion);
-            direccion =  view.findViewById(R.id.titulos_rama);
-            periodo =  view.findViewById(R.id.titulos_nota);
-            photo =  view.findViewById(R.id.imageView_Laboral_photo);
-            editLaboral = view.findViewById(R.id.editar_laboral);
+            cargo = (TextView) view.findViewById(R.id.titulos_centro);
+            empresa = (TextView) view.findViewById(R.id.titulos_nombre_Titulacion);
+            direccion = (TextView) view.findViewById(R.id.titulos_rama);
+            periodo = (TextView) view.findViewById(R.id.titulos_nota);
+            photo =  (ImageView) view.findViewById(R.id.imageView_Laboral_photo);
+            editLaboral = (ImageView) view.findViewById(R.id.editar_laboral);
+            eliminarLaboral = (ImageView) view.findViewById(R.id.borrar_laboral);
         }
 
         @Override

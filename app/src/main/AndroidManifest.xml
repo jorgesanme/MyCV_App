@@ -1,16 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.jorge.mycv">
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".App.MyApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:name=".App.MyApp"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity
+            android:name=".ui.Titulos.DetallesTitulosActivity"
+            android:label="@string/title_activity_detalles_titulos"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".ui.employment.DetallesEmploymentActivity"
+            android:label="@string/title_activity_detalles_employment"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.cursos.DetalleCursoActivity"
+            android:label="@string/title_activity_detalle_curso"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"

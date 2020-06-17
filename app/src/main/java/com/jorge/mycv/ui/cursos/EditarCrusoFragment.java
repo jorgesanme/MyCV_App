@@ -24,6 +24,7 @@ public class EditarCrusoFragment extends DialogFragment {
 
 
     private long idCurso;
+    private String titulo, empresa, horas,descripcion;
     onNuevoCursoGuardarListener mlistener;
     Context contexto;
     View v;
@@ -33,15 +34,17 @@ public class EditarCrusoFragment extends DialogFragment {
     EditText editTextDescripcio;
 
     public EditarCrusoFragment() {
-        // Required empty public constructor
     }
 
-
-    // TODO: Rename and change types and number of parameters
-    public static EditarCrusoFragment newInstance(long id) {
+    public static EditarCrusoFragment newInstance(long id, String titulo, String empresa,
+                                                  String horas, String descripcion) {
         EditarCrusoFragment fragment = new EditarCrusoFragment();
         Bundle args = new Bundle();
         args.putLong(CursosDB.CURSODB_ID, id);
+        args.putString(CursosDB.CURSODB_TITULO,titulo);
+        args.putString(CursosDB.CURSODB_QUIENIMPARTE,empresa);
+        args.putString(CursosDB.CURSODB_HORAS, horas);
+        args.putString(CursosDB.CURSODB_DESCRIPCION,descripcion);
 
         fragment.setArguments(args);
         return fragment;
@@ -51,7 +54,11 @@ public class EditarCrusoFragment extends DialogFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            idCurso = getArguments().getLong(CURSODB_ID);
+            idCurso = getArguments().getLong(CursosDB.CURSODB_ID);
+            titulo = getArguments().getString(CursosDB.CURSODB_TITULO);
+            empresa = getArguments().getString(CursosDB.CURSODB_QUIENIMPARTE);
+            horas = getArguments().getString(CursosDB.CURSODB_HORAS);
+            descripcion = getArguments().getString(CursosDB.CURSODB_DESCRIPCION);
 
         }
     }
@@ -67,17 +74,25 @@ public class EditarCrusoFragment extends DialogFragment {
         editTextEmpresa = v.findViewById(R.id.nuevo_curso_empresa);
         editTextHoras = v.findViewById(R.id.nuevo_curso_horas);
         editTextDescripcio = v.findViewById(R.id.nuevo_curso_descripcion);
+
+        //se precarca el contenido
+        editTextTitulo.setText(titulo);
+        editTextEmpresa.setText(empresa);
+        editTextHoras.setText(horas);
+        editTextDescripcio.setText(descripcion);
+
         builder.setView(v);
 
-        builder.setTitle("Nuevo Curso")
-                .setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+        builder.setTitle(R.string.editar_Curso)
+                .setPositiveButton(R.string.boton_aceptar, new DialogInterface.OnClickListener() {
+
                     public void onClick(DialogInterface dialog, int id) {
                         String titulo = editTextTitulo.getText().toString();
                         String empresa = editTextEmpresa.getText().toString();
                         String horas = editTextHoras.getText().toString();
                         String descripcion = editTextDescripcio.getText().toString();
-                        if (!titulo.isEmpty() && !empresa.isEmpty() && horas.isEmpty()) {
-                            mlistener.onCursoUpdateClickListener(id, titulo, empresa, horas,descripcion);
+                        if (!titulo.isEmpty() && !empresa.isEmpty() && !horas.isEmpty() && !descripcion.isEmpty()) {
+                            mlistener.onCursoUpdateClickListener(idCurso, titulo, empresa, horas,descripcion);
                             dialog.dismiss();
                         } else {
                             Toast.makeText(contexto, "Debes rellenar todos los campos", Toast.LENGTH_LONG).show();

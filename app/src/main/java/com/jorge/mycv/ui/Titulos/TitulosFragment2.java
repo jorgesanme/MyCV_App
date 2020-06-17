@@ -10,29 +10,27 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+import com.jorge.mycv.MainActivity;
 import com.jorge.mycv.R;
 import com.jorge.mycv.TitulosDB;
+import com.jorge.mycv.ui.cursos.NuevoCursoDialog;
 
-
-import java.util.ArrayList;
-import java.util.List;
 
 import io.realm.Realm;
 import io.realm.RealmResults;
 
 
 public class TitulosFragment2 extends Fragment {
-
-
     private onTitulosInteracionListener mListener;
     private RealmResults<TitulosDB> titulosDBList;
     Realm realmInstancia;
 
-    private Context context;
+    private Context context =getActivity();
     DialogFragment nuevoTituloDialogo;
 
     public TitulosFragment2() {
@@ -41,7 +39,6 @@ public class TitulosFragment2 extends Fragment {
     public static TitulosFragment2 newInstance(int columnCount) {
         TitulosFragment2 fragment = new TitulosFragment2();
         Bundle args = new Bundle();
-
         fragment.setArguments(args);
         return fragment;
     }
@@ -50,24 +47,12 @@ public class TitulosFragment2 extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         realmInstancia = Realm.getDefaultInstance();
-
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_titulos2_list, container, false);
-
-        FloatingActionButton fab = (FloatingActionButton)  view.findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                nuevoTituloDialogo = new NuevoTituloDialogo();
-                nuevoTituloDialogo.show(getFragmentManager(),"¿nuevo Titulo?");
-                Snackbar.make(view, "Titulos añadir", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
 
         // Set the adapter
@@ -78,7 +63,7 @@ public class TitulosFragment2 extends Fragment {
             //lista de TitulosDB
             titulosDBList = realmInstancia.where(TitulosDB.class).findAll();
 
-            recyclerView.setAdapter(new MyTitulosRecyclerViewAdapter(titulosDBList, mListener));
+            recyclerView.setAdapter(new MyTitulosRecyclerViewAdapter(getActivity(),titulosDBList, mListener));
         }
         return view;
     }
@@ -100,6 +85,42 @@ public class TitulosFragment2 extends Fragment {
         super.onDetach();
         mListener = null;
     }
+    /*
+    para mostrar y ocultar el FAB
+     */
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+        if (isVisibleToUser && isResumed()) {
+            onResume();
+        }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (!getUserVisibleHint()) {
+            return;
+        }
+
+        final MainActivity mainActivity = (MainActivity) getActivity();
+        if (mainActivity != null) {
+
+            mainActivity.showFloatingActionButton(); //fuerza la visibilidad
+            FloatingActionButton fab = mainActivity.findViewById(R.id.fab);
+            fab.setImageResource(R.drawable.ic_businessman_add); //Cambiar icono
+            fab.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    nuevoTituloDialogo = new NuevoTituloDialogo();
+                    nuevoTituloDialogo.show(getFragmentManager(),"¿nuevo Titulo?");
+                    Toast.makeText(mainActivity, "Se va a lanzar un DialogFragment\n " +
+                            "Añadir un Curso On-Line", Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
+    }
+
 
 
 }
