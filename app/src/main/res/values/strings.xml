@@ -139,4 +139,8 @@
     <string name="title_activity_detalle_curso">DetalleCursoActivity</string>
     <string name="title_activity_detalles_employment">DetallesEmploymentActivity</string>
     <string name="title_activity_detalles_titulos">DetallesTitulosActivity</string>
+    <string name="title_activity_home_scrolling">HomeScrollingActivity</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_maps_empleo">Map</string>
+    <string name="title_activity_maps_cursos">Map</string>
 </resources>

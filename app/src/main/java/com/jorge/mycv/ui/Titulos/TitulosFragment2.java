@@ -10,16 +10,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
-
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
+
 import com.jorge.mycv.MainActivity;
 import com.jorge.mycv.R;
 import com.jorge.mycv.TitulosDB;
-import com.jorge.mycv.ui.cursos.NuevoCursoDialog;
-
 
 import io.realm.Realm;
 import io.realm.RealmResults;
@@ -114,8 +110,7 @@ public class TitulosFragment2 extends Fragment {
                 public void onClick(View v) {
                     nuevoTituloDialogo = new NuevoTituloDialogo();
                     nuevoTituloDialogo.show(getFragmentManager(),"¿nuevo Titulo?");
-                    Toast.makeText(mainActivity, "Se va a lanzar un DialogFragment\n " +
-                            "Añadir un Curso On-Line", Toast.LENGTH_SHORT).show();
+
                 }
             });
         }

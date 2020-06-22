@@ -47,7 +47,6 @@ public class MainActivity extends AppCompatActivity
     private AppBarConfiguration mAppBarConfiguration;
     private FloatingActionButton fab;
     ImageView imageView;
-    DialogFragment dialogoNuevoCurso;
     DialogFragment dialogoEditCurso;
     DialogFragment dialogoEditLaboral;
     DialogFragment dialogoEditTitulo;
@@ -149,7 +148,6 @@ public class MainActivity extends AppCompatActivity
         Intent i = new Intent(this, DetalleCursoActivity.class);
         i.putExtra(CursosDB.CURSODB_ID, cursosDB.getId());
         startActivity(i);
-        Toast.makeText(this, "Curso pulsado:\t"+ cursosDB.getTitulo(), Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -212,7 +210,6 @@ public class MainActivity extends AppCompatActivity
         Intent i = new Intent(this, DetallesEmploymentActivity.class);
         i.putExtra(LaboralDB.LABORALDB_ID, laboralDB.getId());
         startActivity(i);
-        Toast.makeText(this, "trabajo pulsado:\t"+ laboralDB.getCargo(), Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -280,7 +277,7 @@ public class MainActivity extends AppCompatActivity
         Intent i = new Intent(this, DetallesTitulosActivity.class);
         i.putExtra(TitulosDB.TITULOSDB_ID, tituloDB.getId());
         startActivity(i);
-        Toast.makeText(this, "Titulo pulsado:\t"+tituloDB.getTitulo(), Toast.LENGTH_SHORT).show();
+
     }
 
     @Override

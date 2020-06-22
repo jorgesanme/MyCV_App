@@ -16,6 +16,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.TextView;
 
+import com.jorge.mycv.MainActivity;
 import com.jorge.mycv.R;
 
 
@@ -25,6 +26,8 @@ public class LinkedinFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
+        MainActivity mainActivity = (MainActivity) getActivity();
+        mainActivity.hideFloatingActionButton();
 
         final View root = inflater.inflate(R.layout.fragment_linkedin, container, false);
         webView = (WebView) root.findViewById(R.id.webview_linkedin);

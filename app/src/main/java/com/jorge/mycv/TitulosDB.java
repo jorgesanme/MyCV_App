@@ -2,10 +2,12 @@ package com.jorge.mycv;
 
 import com.jorge.mycv.App.MyApp;
 
+import java.io.Serializable;
+
 import io.realm.RealmObject;
 import io.realm.annotations.PrimaryKey;
 
-public class TitulosDB extends RealmObject {
+public class TitulosDB extends RealmObject  {
     public static final String TITULOSDB_ID = "id";
     public static final String TITULOSDB_CENTRO= "centro";
     public static final String TITULOSDB_TITULO = "titulo";

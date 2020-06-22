@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.jorge.mycv.LaboralDB;
 import com.jorge.mycv.R;
 import com.jorge.mycv.TitulosDB;
@@ -75,6 +76,37 @@ public class MyTitulosRecyclerViewAdapter extends RecyclerView.Adapter<MyTitulos
         holder.rama.setText(holder.mItem.getRama());
         holder.nota.setText( String.valueOf(holder.mItem.getNota())+"\tPuntos");
 
+        String urlAdeje = "http://www3.gobiernodecanarias.org/medusa/edublog/iesadeje/wp-content/uploads/sites/189/2019/03/logo_blog.png";
+        String urlCedeco = "https://www.cedeco.es/wp-content/uploads/2018/08/Logo-CEDECO-COLOR.jpg";
+        String urlPuerto = "https://blog.iespuertodelacruz.es/wp-content/header/Logotipo_IES.png";
+        String urlCesar = "https://cifpcesarmanrique.es/wp-content/uploads/2019/01/LogoCMTransparente-BrilloExt-300x93.png";
+
+        if (holder.mItem.getCentro().contains("Adeje")){
+            Glide
+                    .with(ctx)
+                    .load(urlAdeje)
+                    //.centerCrop()
+                    .into(holder.photo);
+        }else if (holder.mItem.getCentro().contains("Cedeco")) {
+            Glide
+                    .with(ctx)
+                    .load(urlCedeco)
+                    //.centerCrop()
+                    .into(holder.photo);
+        }else if (holder.mItem.getCentro().contains("Telesforo")) {
+            Glide
+                    .with(ctx)
+                    .load(urlPuerto)
+                    //.centerCrop()
+                    .into(holder.photo);
+        }else if (holder.mItem.getCentro().contains("Cesar")) {
+            Glide
+                    .with(ctx)
+                    .load(urlCesar)
+                    //.centerCrop()
+                    .into(holder.photo);
+        }
+
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -111,6 +143,7 @@ public class MyTitulosRecyclerViewAdapter extends RecyclerView.Adapter<MyTitulos
         public final TextView nombre;
         public final TextView rama;
         public final TextView nota;
+        public final ImageView photo;
         public final ImageView editTitulo;
         public final ImageView eliminarTitulo;
         public TitulosDB mItem;
@@ -124,6 +157,7 @@ public class MyTitulosRecyclerViewAdapter extends RecyclerView.Adapter<MyTitulos
             nota = (TextView) view.findViewById(R.id.titulos_nota);
             editTitulo = (ImageView) view.findViewById(R.id.editar_titulo);
             eliminarTitulo = (ImageView) view.findViewById(R.id.borrar_titulo);
+            photo = (ImageView) view.findViewById(R.id.imageView_Laboral_photo);
         }
 
         @Override

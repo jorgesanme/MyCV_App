@@ -24,32 +24,28 @@
 
         <ImageView
             android:id="@+id/imageView_Laboral_photo"
-            android:layout_width="70dp"
-            android:layout_height="83dp"
+            android:layout_width="59dp"
+            android:layout_height="77dp"
             android:layout_marginTop="8dp"
-            android:scaleType="centerInside"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.046"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_graduated_64dp"
+            app:srcCompat="@drawable/ic_businessman"
             tools:ignore="VectorDrawableCompat" />
 
         <TextView
             android:id="@+id/titulos_nota"
-            android:layout_width="158dp"
-            android:layout_height="24dp"
+            android:layout_width="61dp"
+            android:layout_height="26dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="2dp"
-            android:layout_marginBottom="2dp"
             android:paddingTop="4sp"
             android:paddingBottom="4sp"
             android:text="TextView"
             android:textSize="14sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/titulos_rama"
+            app:layout_constraintStart_toEndOf="@+id/imageView2"
             app:layout_constraintTop_toBottomOf="@+id/titulos_rama" />
 
         <TextView
@@ -81,6 +77,16 @@
             app:layout_constraintStart_toEndOf="@+id/imageView_Laboral_photo"
             app:layout_constraintTop_toTopOf="@+id/imageView_Laboral_photo" />
 
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            app:layout_constraintStart_toStartOf="@+id/titulos_rama"
+            app:layout_constraintTop_toBottomOf="@+id/titulos_rama"
+            app:srcCompat="@drawable/ic_timer_black_24dp"
+            tools:ignore="VectorDrawableCompat" />
+
         <TextView
             android:id="@+id/titulos_rama"
             android:layout_width="wrap_content"
@@ -93,25 +99,24 @@
             app:layout_constraintTop_toBottomOf="@+id/titulos_nombre_Titulacion" />
 
         <ImageView
-            android:id="@+id/editar_titulo"
+            android:id="@+id/editar_laboral"
             android:layout_width="28sp"
             android:layout_height="28sp"
-            android:layout_marginTop="4dp"
-            android:layout_marginEnd="4dp"
-            app:layout_constraintEnd_toEndOf="@+id/borrar_titulo"
-            app:layout_constraintStart_toStartOf="@+id/borrar_titulo"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toStartOf="@+id/borrar_laboral"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_edit_black"
             tools:ignore="VectorDrawableCompat" />
 
         <ImageView
-            android:id="@+id/borrar_titulo"
+            android:id="@+id/borrar_laboral"
             android:layout_width="28sp"
             android:layout_height="28sp"
-            android:layout_marginEnd="4dp"
-            android:layout_marginBottom="4dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/editar_laboral"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/editar_laboral"
             app:srcCompat="@drawable/ic_bin"
             tools:ignore="VectorDrawableCompat" />
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,69 +7,72 @@
 
     <EditText
         android:id="@+id/nuevo_titulo_centro"
-        android:layout_width="344dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="26dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="26dp"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="Centro formativo"
         android:inputType="textPersonName"
         android:paddingLeft="6sp"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/nuevo_titulo_nombre"
-        android:layout_width="344dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="Nombre del Titulo"
         android:inputType="textPersonName"
         android:paddingLeft="6sp"
-        app:layout_constraintEnd_toEndOf="@+id/nuevo_curso_nombre"
-        app:layout_constraintStart_toStartOf="@+id/nuevo_titulo_centro"
-        app:layout_constraintTop_toBottomOf="@+id/nuevo_titulo_centro" />
+        app:layout_constraintStart_toEndOf="@+id/nuevo_titulo_centro"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/nuevo_titulo_rama"
-        android:layout_width="344dp"
-        android:layout_height="45dp"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="Rama formativa"
         android:inputType="textPersonName"
+        android:paddingLeft="6sp"
+        app:layout_constraintEnd_toEndOf="@+id/nuevo_titulo_centro"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nuevo_titulo_centro" />
+
+    <EditText
+        android:id="@+id/nuevo_titulo_nota"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Nota"
+        android:inputType="number|numberDecimal"
         android:paddingLeft="6sp"
         app:layout_constraintEnd_toEndOf="@+id/nuevo_titulo_nombre"
         app:layout_constraintStart_toStartOf="@+id/nuevo_titulo_nombre"
         app:layout_constraintTop_toBottomOf="@+id/nuevo_titulo_nombre" />
 
     <EditText
-        android:id="@+id/nuevo_titulo_nota"
-        android:layout_width="344dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:hint="Nota"
-        android:inputType="number|numberDecimal"
-        app:layout_constraintEnd_toEndOf="@+id/nuevo_titulo_rama"
-        app:layout_constraintStart_toStartOf="@+id/nuevo_titulo_rama"
-        app:layout_constraintTop_toBottomOf="@+id/nuevo_titulo_rama" />
-
-    <EditText
         android:id="@+id/nuevo_titulo_descripcion"
-        android:layout_width="344dp"
-        android:layout_height="135dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_width="417dp"
+        android:layout_height="140dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="Descripcion"
         android:inputType="textLongMessage|textMultiLine|textPersonName"
+        android:paddingLeft="6sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/nuevo_titulo_nota"
-        app:layout_constraintStart_toStartOf="@+id/nuevo_titulo_nota"
-        app:layout_constraintTop_toBottomOf="@+id/nuevo_titulo_nota" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nuevo_titulo_rama"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

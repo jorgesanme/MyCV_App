@@ -81,6 +81,7 @@ public class MyCursosRecyclerViewAdapter extends RecyclerView.Adapter<MyCursosRe
         String urlOpenWebinar = "https://www.linuxadictos.com/wp-content/uploads/openwebinars-logo.jpg";
         String urlAppBrewery = "https://pbs.twimg.com/profile_images/608304087021572096/Dnig5VDZ_400x400.png";
 
+
         if (mValues.get(position).getQuienImparte().equalsIgnoreCase("UPV" )){
             Glide
                     .with(ctx)

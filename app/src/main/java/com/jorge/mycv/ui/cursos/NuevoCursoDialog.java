@@ -43,7 +43,7 @@ public class NuevoCursoDialog extends DialogFragment {
                         String titulo= editTextTitulo.getText().toString();
                         String empresa= editTextEmpresa.getText().toString();
                         String horas= editTextHoras.getText().toString();
-                        String descripcion = editTextDescripcion.toString();
+                        String descripcion = editTextDescripcion.getText().toString();
                         if (!titulo.isEmpty() && !empresa.isEmpty()
                                 && !horas.isEmpty() && !descripcion.isEmpty()){
                             mlistener.onCursoGuardarClickListener(titulo,empresa,horas,descripcion);

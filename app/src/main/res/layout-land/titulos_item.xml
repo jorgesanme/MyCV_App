@@ -24,10 +24,9 @@
 
         <ImageView
             android:id="@+id/imageView_Laboral_photo"
-            android:layout_width="70dp"
-            android:layout_height="83dp"
+            android:layout_width="59dp"
+            android:layout_height="77dp"
             android:layout_marginTop="8dp"
-            android:scaleType="centerInside"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.046"
             app:layout_constraintStart_toStartOf="parent"
@@ -96,10 +95,9 @@
             android:id="@+id/editar_titulo"
             android:layout_width="28sp"
             android:layout_height="28sp"
-            android:layout_marginTop="4dp"
-            android:layout_marginEnd="4dp"
-            app:layout_constraintEnd_toEndOf="@+id/borrar_titulo"
-            app:layout_constraintStart_toStartOf="@+id/borrar_titulo"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toStartOf="@+id/borrar_titulo"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_edit_black"
             tools:ignore="VectorDrawableCompat" />
@@ -108,10 +106,10 @@
             android:id="@+id/borrar_titulo"
             android:layout_width="28sp"
             android:layout_height="28sp"
-            android:layout_marginEnd="4dp"
-            android:layout_marginBottom="4dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/editar_titulo"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/editar_titulo"
             app:srcCompat="@drawable/ic_bin"
             tools:ignore="VectorDrawableCompat" />
     </androidx.constraintlayout.widget.ConstraintLayout>

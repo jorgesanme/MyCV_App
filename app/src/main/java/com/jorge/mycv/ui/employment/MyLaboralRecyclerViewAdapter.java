@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.jorge.mycv.LaboralDB;
 import com.jorge.mycv.R;
 
@@ -73,6 +74,37 @@ public class MyLaboralRecyclerViewAdapter extends RecyclerView.Adapter<MyLaboral
         holder.empresa.setText(mValues.get(position).getEmpresa());
         holder.direccion.setText(mValues.get(position).getDirecion());
         holder.periodo.setText(mValues.get(position).getPeriodo());
+
+        String urlFloral = "https://www.bookaris.com/images/HA/images/hoteles/129691_fotpe1_web1.jpg";
+        String urlMilord = "https://r-cf.bstatic.com/images/hotel/max1024x768/201/201096238.jpg";
+        String urlH10 = "https://cmspro.h10hotels.com/ImagenesHotel/hotelhca%20(4).jpg";
+        String urlFinca = "https://www.hotel-fincasalamanca.com/cache/64/1f/641fdb8235c37e144af206f4f943cc3d.jpg";
+
+        if (holder.mItem.getEmpresa().contains("floral")){
+            Glide
+                    .with(contexto)
+                    .load(urlFloral)
+                    .centerCrop()
+                    .into(holder.photo);
+        }else if (holder.mItem.getEmpresa().contains("milord")) {
+            Glide
+                    .with(contexto)
+                    .load(urlMilord)
+                    .centerCrop()
+                    .into(holder.photo);
+        }else if (holder.mItem.getEmpresa().contains("H10")) {
+            Glide
+                    .with(contexto)
+                    .load(urlH10)
+                    .centerCrop()
+                    .into(holder.photo);
+        }else if (holder.mItem.getEmpresa().contains("Finca")) {
+            Glide
+                    .with(contexto)
+                    .load(urlFinca)
+                    .centerCrop()
+                    .into(holder.photo);
+        }
 
 
         holder.mView.setOnClickListener(new View.OnClickListener() {
