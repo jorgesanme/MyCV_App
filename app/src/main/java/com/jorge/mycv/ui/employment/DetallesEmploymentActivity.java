@@ -73,7 +73,7 @@ public class DetallesEmploymentActivity extends AppCompatActivity {
                     .into(fondo);
         }
 
-        setTitle(empleoMostrado.getCargo().toUpperCase());
+        setTitle("");
         textDetalles.setText(empleoMostrado.getCargo()+"\n"
                 +empleoMostrado.getEmpresa()+"\n\n"
                 +empleoMostrado.getDescripcion());

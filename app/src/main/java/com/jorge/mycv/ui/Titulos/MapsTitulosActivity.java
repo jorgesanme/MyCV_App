@@ -69,6 +69,16 @@ public class MapsTitulosActivity extends FragmentActivity implements OnMapReadyC
                     .position(objetoMostrado)
                     .title("Cedeco Formación")
                     .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+        }else {
+            objetoMostrado = new LatLng(28.5104263,-16.1826083);
+            mMap.addMarker(new MarkerOptions()
+                    .position(objetoMostrado)
+                    .title("Referencia no encontrada.")
+                    .snippet("Espere aquí mientras buscamos la referencia")
+                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+
+            mMap.moveCamera(CameraUpdateFactory.newLatLng(objetoMostrado));
+            mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
         }
         mMap.moveCamera(CameraUpdateFactory.newLatLng(objetoMostrado));
         mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);

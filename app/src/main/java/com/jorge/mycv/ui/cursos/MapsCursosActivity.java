@@ -42,34 +42,40 @@ public class MapsCursosActivity extends FragmentActivity implements OnMapReadyCa
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-        if (cursoMostrado.getQuienImparte().equalsIgnoreCase("UPV")){
-            objetoMostrado = new LatLng(39.4788721,-0.3342507);
+        if (cursoMostrado.getQuienImparte().equalsIgnoreCase("UPV")) {
+            objetoMostrado = new LatLng(39.4788721, -0.3342507);
             mMap.addMarker(new MarkerOptions()
                     .position(objetoMostrado)
                     .title("Universidad Politecnica de Valencia")
                     .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
-        }else if(cursoMostrado.getQuienImparte().equalsIgnoreCase("OpenWebinar")){
-            objetoMostrado = new LatLng(37.3782519,-6.0018966);
+        } else if (cursoMostrado.getQuienImparte().equalsIgnoreCase("OpenWebinar")) {
+            objetoMostrado = new LatLng(37.3782519, -6.0018966);
             mMap.addMarker(new MarkerOptions()
                     .position(objetoMostrado)
                     .title("OpenWebinar")
                     .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
 
-        }else if(cursoMostrado.getQuienImparte().equalsIgnoreCase("keepCoding")) {
-            objetoMostrado = new LatLng(40.4041266,-3.6899994);
+        } else if (cursoMostrado.getQuienImparte().equalsIgnoreCase("keepCoding")) {
+            objetoMostrado = new LatLng(40.4041266, -3.6899994);
             mMap.addMarker(new MarkerOptions()
                     .position(objetoMostrado)
                     .title("KeepCoding")
                     .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
-        }else if(cursoMostrado.getQuienImparte().equalsIgnoreCase("AppBrewery")) {
-            objetoMostrado = new LatLng(51.5209573,-0.0520705);
+        } else if (cursoMostrado.getQuienImparte().equalsIgnoreCase("AppBrewery")) {
+            objetoMostrado = new LatLng(51.5209573, -0.0520705);
             mMap.addMarker(new MarkerOptions()
                     .position(objetoMostrado)
                     .title("AppBrewery")
                     .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+        } else {
+            objetoMostrado = new LatLng(28.5104263, -16.1826083);
+            mMap.addMarker(new MarkerOptions()
+                    .position(objetoMostrado)
+                    .title("Referencia no encontrada.")
+                    .snippet("Espere aquí mientras buscamos la referencia")
+                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
         }
-
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(objetoMostrado));
-        mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+            mMap.moveCamera(CameraUpdateFactory.newLatLng(objetoMostrado));
+            mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
     }
 }

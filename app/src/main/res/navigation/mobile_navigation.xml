@@ -43,6 +43,6 @@
     <fragment
         android:id="@+id/nav_blog"
         android:name="com.jorge.mycv.ui.VidaDigital.BlogFragment"
-        android:label="MyBlog"
+        android:label="@string/menu_miBlog"
         tools:layout="@layout/fragment_blog" />
 </navigation>

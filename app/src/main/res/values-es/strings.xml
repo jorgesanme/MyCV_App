@@ -1,57 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">My CV</string>
-    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
-    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio Development</string>
+    <string name="app_name">Mi CV</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Desarrollador en Android Studio</string>
     <string name="nav_header_subtitle">Jorgesanme@gmail.com</string>
-    <string name="nav_header_desc" translatable="false">Navigation header</string>
-    <string name="action_settings">Settings</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Ajustes</string>
 
-    <string name="menu_home">Home</string>
-    <string name="menu_degrees">Degrees</string>
-    <string name="menu_courses">Courses</string>
-    <string name="menu_employment">Career</string>
-    <string name="menu_miBlog">My Blog</string>
+    <string name="menu_home">Principal</string>
+    <string name="menu_degrees">Titulos</string>
+    <string name="menu_courses">Cursos</string>
+    <string name="menu_employment">Trabajos</string>
+    <string name="menu_miBlog">Mi Blog</string>
 
 
-    <string name="menu_digital_life">Digital life</string>
+    <string name="menu_digital_life">Vida Digital</string>
 
-    <string name="boton_cancelar">Cancel</string>
-    <string name="boton_aceptar">Accept</string>
+    <string name="boton_cancelar">Cancelar</string>
+    <string name="boton_aceptar">Aceptar</string>
 
-    <string name="nueva_trabajo">New Job</string>
-    <string name="hint_tabajo_cargo">Position</string>
-    <string name="hint_tabajo_empresa">Company name</string>
-    <string name="hint_tabajo_direccion">Address</string>
-    <string name="hint_tabajo_tiempo">Time on the job</string>
-    <string name="hint_tabajo_descripcion">Job description</string>
+    <string name="nueva_trabajo">Nuevo Trabajo</string>
+    <string name="hint_tabajo_cargo">Cargo</string>
+    <string name="hint_tabajo_empresa">"Empresa "</string>
+    <string name="hint_tabajo_direccion">Direccion</string>
+    <string name="hint_tabajo_tiempo">Tiempo en el cargo</string>
+    <string name="hint_tabajo_descripcion">Descripcion del puesto</string>
 
-    <string name="nueva_Curso">New Course</string>
-    <string name="hint_curso_titulo">Course name</string>
-    <string name="hint_curso_centro">Training center</string>
-    <string name="hint_curso_horas">Course duration</string>
-    <string name="hint_curso_descripcion">Course description</string>
+    <string name="nueva_Curso">Nuevo curso</string>
+    <string name="hint_curso_titulo">Nombre del Curso</string>
+    <string name="hint_curso_centro">Centro donde se ha cursado</string>
+    <string name="hint_curso_horas">Duración del curso</string>
+    <string name="hint_curso_descripcion">Descripcion de contenido</string>
 
-    <string name="nueva_titulo">New Degrees</string>
-    <string name="hint_titulo_centro">Institute or faculty </string>
-    <string name="hint_titulo_titulo">Degrees Name</string>
-    <string name="hint_titulo_rama">Branch</string>
-    <string name="hint_titulo_nota">Note</string>
-    <string name="hint_titulo_descripcion">Degrees description </string>
+    <string name="nueva_titulo">Nueva Titulación</string>
+    <string name="hint_titulo_centro">"Instituto o Facultad "</string>
+    <string name="hint_titulo_titulo">Nombre del Titulo</string>
+    <string name="hint_titulo_rama">Rama formativa</string>
+    <string name="hint_titulo_nota">Nota</string>
+    <string name="hint_titulo_descripcion">Descripcion de contenido</string>
 
-    <string name="editar_trabajo">Edit Employment</string>
-    <string name="editar_Curso">Edit Course</string>
-    <string name="editar_titulo">Edit Degrees</string>
+    <string name="editar_trabajo">Editar Empleo</string>
+    <string name="editar_Curso">Editar Curso</string>
+    <string name="editar_titulo">Editar Titulación</string>
 
-    <string name="eliminar_trabajo">Delete Employment</string>
-    <string name="eliminar_Curso">Delete Course</string>
-    <string name="eliminar_titulo">Delete Degrees</string>
-    <string name="eliminar_mensaje">Do you really want to delete? </string>
+    <string name="eliminar_trabajo">Elilminar Empleo</string>
+    <string name="eliminar_Curso">Eliminar Curso</string>
+    <string name="eliminar_titulo">Eliminar Titulación</string>
+    <string name="eliminar_mensaje">¿Relamente desea  borrar esto?</string>
 
 
 
     <string name="large_text">
-        "Todo esto deberia estar en Ingles, pero no me apetecia hacerlo ;-)\n\n"
         "Hola.\n"
         "Esta App ha sido diseñada y creada con el obejtivo de practicar los conocimientos en"
         " Android-Studio, usando, en principio el lenguaje Java. En futuras actualizaciones se usará Kotlin\n\n"

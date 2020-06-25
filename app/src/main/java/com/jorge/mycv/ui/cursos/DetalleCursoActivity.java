@@ -50,8 +50,8 @@ public class DetalleCursoActivity extends AppCompatActivity {
         String urlAppBrewery = "https://pbs.twimg.com/profile_images/608304087021572096/Dnig5VDZ_400x400.png";
 
         RequestOptions options = new RequestOptions();
-        options.centerCrop();
-        options.fitCenter();
+        options.circleCrop();
+
 
         if (cursoMostrado.getQuienImparte().equalsIgnoreCase("upv")){
             Glide
@@ -80,10 +80,10 @@ public class DetalleCursoActivity extends AppCompatActivity {
         }
 
 
-        setTitle(""+cursoMostrado.getTitulo().toUpperCase());
+        setTitle("");
         textDetalles.setText(cursoMostrado.getTitulo().toUpperCase()+"\n"
                 +cursoMostrado.getQuienImparte().toUpperCase()+",\n"
-                +cursoMostrado.getHorasFormacion()+" Horas,\n\n"
+                +cursoMostrado.getHorasFormacion()+" Horas.\n\n"
                 +cursoMostrado.getDescripcion());
 
 

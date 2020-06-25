@@ -12,9 +12,9 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:ems="10"
-        android:hint="Centro formativo"
+        android:hint="@string/hint_titulo_centro"
         android:inputType="textPersonName"
-        android:paddingLeft="6sp"
+        android:paddingLeft="8sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -25,9 +25,9 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:ems="10"
-        android:hint="Nombre del Titulo"
+        android:hint="@string/hint_titulo_titulo"
         android:inputType="textPersonName"
-        android:paddingLeft="6sp"
+        android:paddingLeft="8sp"
         app:layout_constraintStart_toEndOf="@+id/nuevo_titulo_centro"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -38,10 +38,11 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:ems="10"
-        android:hint="Rama formativa"
+        android:hint="@string/hint_titulo_rama"
         android:inputType="textPersonName"
-        android:paddingLeft="6sp"
+        android:paddingLeft="8sp"
         app:layout_constraintEnd_toEndOf="@+id/nuevo_titulo_centro"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nuevo_titulo_centro" />
 
@@ -51,9 +52,9 @@
         android:layout_height="40dp"
         android:layout_marginTop="16dp"
         android:ems="10"
-        android:hint="Nota"
+        android:hint="@string/hint_titulo_nota"
         android:inputType="number|numberDecimal"
-        android:paddingLeft="6sp"
+        android:paddingLeft="8sp"
         app:layout_constraintEnd_toEndOf="@+id/nuevo_titulo_nombre"
         app:layout_constraintStart_toStartOf="@+id/nuevo_titulo_nombre"
         app:layout_constraintTop_toBottomOf="@+id/nuevo_titulo_nombre" />
@@ -62,16 +63,14 @@
         android:id="@+id/nuevo_titulo_descripcion"
         android:layout_width="417dp"
         android:layout_height="140dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:ems="10"
-        android:hint="Descripcion"
+        android:hint="@string/hint_titulo_descripcion"
         android:inputType="textLongMessage|textMultiLine|textPersonName"
-        android:paddingLeft="6sp"
+        android:paddingLeft="8sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/nuevo_titulo_nota"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/nuevo_titulo_rama"
         app:layout_constraintTop_toBottomOf="@+id/nuevo_titulo_rama"
         app:layout_constraintVertical_bias="0.0" />
 

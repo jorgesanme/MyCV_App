@@ -32,7 +32,7 @@
             app:layout_constraintHorizontal_bias="0.046"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_menu_camera"
+            app:srcCompat="@drawable/ic_online_course"
             tools:ignore="VectorDrawableCompat" />
 
         <TextView

@@ -51,25 +51,25 @@ public class DetallesTitulosActivity extends AppCompatActivity {
             Glide
                     .with(this)
                     .load(urlOlivos)
-                    //.centerCrop()
+                    .centerInside()
                     .into(fondo);
         }else if (tituloMostrado.getCentro().contains("Cedeco")) {
             Glide
                     .with(this)
                     .load(urlCedeco)
-                    //.centerCrop()
+                    .centerInside()
                     .into(fondo);
         }else if (tituloMostrado.getCentro().contains("Telesforo")) {
             Glide
                     .with(this)
                     .load(urlPuerto)
-                    //.centerCrop()
+                    .centerInside()
                     .into(fondo);
         }else if (tituloMostrado.getCentro().contains("Cesar")) {
             Glide
                     .with(this)
                     .load(urlCesar)
-                    //.centerCrop()
+                    .centerInside()
                     .into(fondo);
         }
 

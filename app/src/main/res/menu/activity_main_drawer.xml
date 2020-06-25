@@ -35,7 +35,7 @@
         <item
             android:id="@+id/nav_blog"
             android:icon="@drawable/ic_icon_blogger"
-            android:title="Mi Blog"/>
+            android:title="@string/menu_miBlog"/>
 
     </group>
 
