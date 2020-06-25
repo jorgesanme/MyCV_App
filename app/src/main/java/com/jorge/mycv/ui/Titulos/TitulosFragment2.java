@@ -104,7 +104,7 @@ public class TitulosFragment2 extends Fragment {
 
             mainActivity.showFloatingActionButton(); //fuerza la visibilidad
             FloatingActionButton fab = mainActivity.findViewById(R.id.fab);
-            fab.setImageResource(R.drawable.ic_businessman_add); //Cambiar icono
+            fab.setImageResource(R.drawable.ic_graduated_add); //Cambiar icono
             fab.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

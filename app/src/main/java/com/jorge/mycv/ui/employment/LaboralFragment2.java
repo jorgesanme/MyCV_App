@@ -66,34 +66,6 @@ public class LaboralFragment2 extends Fragment {
             //lista de empleos
             laboralDBList =realInstancia.where(LaboralDB.class).findAll();
 
-/*
-            laboralDBList.add( new LaboralDB("Ayudante recepcion","Paraiso floral","playa paraiso",
-                    "2 años",
-                    "ayuda en la entradas"));
-            laboralDBList.add( new LaboralDB("Ayudante Recepcion","hotel milor","ibiza",
-                    "6 meses",
-                    "ayuda en los catetos"));
-            laboralDBList.add( new LaboralDB("Recepcionista","Hotel Floral","Tenerfie",
-                    "2 años",
-                    "trata directo con clientes"));
-            laboralDBList.add( new LaboralDB("Recepcionista ","Fair Hotel","Frankfurt",
-                    "2 meses",
-                    "trata directo con clientes"));
-            laboralDBList.add( new LaboralDB("Recepcionista ","Bed hotel Bruselas","Bruselas",
-                    "2 meses",
-                    "trata directo con clientes"));
-            laboralDBList.add( new LaboralDB("Recepcionista ","Bed hotel Padova","Padova",
-                    "2 meses",
-                    "trata directo con clientes"));
-            laboralDBList.add( new LaboralDB("Jefe 2º Recepcion ","Fiesta hotels","Tenerife",
-                    "10 años",
-                    "supervisar trabajo de Recepcionista y ayudantes"));
-            laboralDBList.add( new LaboralDB("Jefe Recepcion ","Hotel Rural Güimar","Tenerife",
-                    "6 mese",
-                    "Dirigir el equipo de  Recepcionista y ayudantes"));
-
- */
-
             recyclerView.setAdapter(new MyLaboralRecyclerViewAdapter(getActivity(), laboralDBList, mListener));
         }
         return view;
@@ -142,7 +114,7 @@ public class LaboralFragment2 extends Fragment {
 
             FloatingActionButton fab = mainActivity.findViewById(R.id.fab);
 
-            fab.setImageResource(R.drawable.ic_online_course_add); //Cambiar icono
+            fab.setImageResource(R.drawable.ic_businessman_add); //Cambiar icono
 
             fab.setOnClickListener(new View.OnClickListener() {
                 @Override
