@@ -54,7 +54,7 @@ Al pulsar en el centro de la tarjeta, se mostrará los detalles de cada registro
 
  ***
 #### Link embebidos
-El menú lateral también le dara acceso "embebido" a cada una  de los enlaces a mi presencia digital en la web. Es decir puede leer el LinkedIn, mi blog o acceder a mi repositorio de GitHub, sin usar navegador o salir de la aplicación. Para ello se usa la Clase `WebView`.
+El menú lateral también le dara acceso "embebido" a cada una  de los enlaces a mi presencia digital en la web. Es decir puede leer el [LinkedIn](https://www.linkedin.com/in/jorge-s%C3%A1nchez-medina-bb7b7371/), mi [Blog](https://jorgecia.wixsite.com/miblog) o acceder a mi repositorio de [GitHub](https://github.com/jorgesanme), sin usar navegador o salir de la aplicación. Para ello se usa la Clase `WebView`.
 <p align="center"> <img src="/imagenMD/imagen10.png" width="190"/> <img src="/imagenMD/imagen11.png" width="190"/> <img src="/imagenMD/imagen12.png" width="190"/ </p>
 
 
