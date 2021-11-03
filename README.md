@@ -1,6 +1,6 @@
- ## Mi CV
+## Mi CV
  
- ***
+
 
 ### App de muestra 
 
@@ -9,13 +9,16 @@ Esta App ha sido diseñada y desarrollada con el objetivo de practicar los conoc
 Si le resulta más cómodo puede ver el vídeo explicativo [youtube]
 
 ***
-#### Contruido con:
+#### Contruido con arquitectura MVC usando:
 
 - Android Studio
     - Java
-    - Realm (DDBB)
+    - Fragment
+    - Interfaces
+    - Realm (DDBB) => CRUD completo
     - Glide (carga de imagen desde Internet)
     - WebView (mostrar web embebidas)
+    - **Maps**
 
 ***
 #### __Esquema__:
